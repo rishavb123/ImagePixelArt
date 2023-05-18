@@ -21,7 +21,10 @@ class Pixelize(Processor):
         for i in range(0, h, self.pixel_size):
             for j in range(0, w, self.pixel_size):
                 img[i : i + self.pixel_size, j : j + self.pixel_size] = self.combiner(
-                    img[i : i + self.pixel_size, j : j + self.pixel_size].reshape(-1, 3)
+                    img[i : i + self.pixel_size, j : j + self.pixel_size].reshape(
+                        -1, 3
+                    ),
+                    axis=0,
                 )
 
         return img
