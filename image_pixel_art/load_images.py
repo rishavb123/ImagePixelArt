@@ -19,4 +19,5 @@ print("Converting to numpy")
 
 imgs = np.array(imgs)
 np.save(f"{DATA_PATH}/processed_imgs.npy", imgs)
+np.save(f"{DATA_PATH}/processed_img_names.npy", img_names)
 print(imgs.shape)
