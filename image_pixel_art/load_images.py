@@ -3,8 +3,7 @@ import numpy as np
 from tqdm import tqdm
 import os
 
-DATA_PATH = "C:/Data/ImagePixelData"
-DATASET_NAME = "processed"
+from constants import *
 
 imgs_path = f"{DATA_PATH}/{DATASET_NAME}"
 
