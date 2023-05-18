@@ -14,9 +14,13 @@ class Pixelize(Processor):
         self.combiner = combiner
         self.pixel_size = pixel_size
 
+        self.pixel_num = 0
+
     def _process(self) -> np.ndarray:
         img = np.copy(self.loader.bgr())
         h, w, _ = img.shape
+
+        self.pixel_num = 0
 
         for i in range(0, h, self.pixel_size):
             for j in range(0, w, self.pixel_size):
@@ -26,6 +30,7 @@ class Pixelize(Processor):
                     ),
                     axis=0,
                 )
+                self.pixel_num += 1
 
         return img
 
