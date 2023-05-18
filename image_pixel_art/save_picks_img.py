@@ -5,15 +5,15 @@ from constants import *
 
 picks_dir = "random_picks"
 
-alpha = 0.5
-beta = 0.5
+beta = 0.75
+alpha = 1 - beta
 
 n_x = 32
 n_y = 18
 
 c = 0
 
-colors = cv2.imread(f"{DATA_PATH}/samples/img_processed_upscaled.jpg")
+colors = cv2.imread(f"{DATA_PATH}/samples/{BIG_IMAGE_NAME}_processed_downscaled.jpg")
 
 img = np.zeros((400 * n_y, 400 * n_x, 3))
 
@@ -24,10 +24,11 @@ for i in range(n_y):
             img_name = f.read()
 
         photo = cv2.imread(f"{DATA_PATH}/{DATASET_NAME}/{img_name}")
-        color = colors[i * 400 : i * 400 + 400, j * 400 : j * 400 + 400]
+        color = np.zeros_like(photo)
+        color[:] = colors[i, j]
 
         img[i * 400 : i * 400 + 400, j * 400 : j * 400 + 400] = cv2.addWeighted(photo, alpha, color, beta, 0.0)
 
         c += 1
 
-cv2.imwrite(f"{DATA_PATH}/{picks_dir}_result_{DATASET_NAME}.jpg", img)
+cv2.imwrite(f"{DATA_PATH}/{BIG_IMAGE_NAME}_{picks_dir}_{DATASET_NAME}_{beta}_result.jpg", img)

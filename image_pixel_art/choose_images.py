@@ -35,7 +35,7 @@ def put_text(img, txt):
     )
 
 
-big_img = cv2.imread(f"{DATA_PATH}/samples/img_processed_downscaled.jpg")
+big_img = cv2.imread(f"{DATA_PATH}/samples/{BIG_IMAGE_NAME}_processed_downscaled.jpg")
 
 h, w, _ = big_img.shape
 
