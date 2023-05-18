@@ -18,7 +18,7 @@ def main():
         # kmeans,
     )
     alg.save_processed_img()
-    # print(alg.calc_error(), pixelize.pixel_num)
+    print(pixelize.pixel_num)
 
 if __name__ == "__main__":
     main()
