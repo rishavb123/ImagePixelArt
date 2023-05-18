@@ -30,4 +30,4 @@ for i in range(n_y):
 
         c += 1
 
-cv2.imwrite(f"{picks_dir}_result.jpg", img)
+cv2.imwrite(f"{DATA_PATH}/{picks_dir}_result.jpg", img)
