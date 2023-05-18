@@ -5,7 +5,7 @@ from constants import *
 
 picks_dir = "random_picks"
 
-beta = 0.75
+beta = 0.4
 alpha = 1 - beta
 
 n_x = 32
