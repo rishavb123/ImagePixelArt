@@ -5,7 +5,7 @@ from pixelize import Pixelize
 from kmeans import KMeans
 
 def main():
-    img_path = f"{DATA_PATH}/samples/img.png"
+    img_path = f"{DATA_PATH}/samples/{IMAGE_NAME}.jpg"
 
     loader = Loader.load(img_path)
 

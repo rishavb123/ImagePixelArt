@@ -36,6 +36,6 @@ class Pixelize(Processor):
 
 
 if __name__ == "__main__":
-    loader = Loader.load(f"{DATA_PATH}/samples/img.jpg")
+    loader = Loader.load(f"{DATA_PATH}/samples/{IMAGE_NAME}.jpg")
     alg = Pixelize(loader, pixel_size=10)
-    alg.save_processed_img(path=f"{DATA_PATH}/samples/pixel_img.jpg")
+    alg.save_processed_img(path=f"{DATA_PATH}/samples/pixel_{IMAGE_NAME}.jpg")
