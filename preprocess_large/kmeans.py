@@ -57,6 +57,6 @@ class KMeans(Processor):
 
 
 if __name__ == "__main__":
-    loader = Loader.load(f"{DATA_PATH}/samples/img.jpg")
-    alg = KMeans(loader, k=50, log=True, max_iterations=10)
-    alg.save_processed_img(path=f"{DATA_PATH}/samples/kmeans_img.jpg")
+    loader = Loader.load(f"{DATA_PATH}/samples/img_processed_downscaled.png")
+    alg = KMeans(loader, k=3, log=True, max_iterations=10)
+    alg.save_processed_img(path=f"{DATA_PATH}/samples/kmeans_img.png")
