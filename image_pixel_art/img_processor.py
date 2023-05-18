@@ -52,7 +52,7 @@ class CompositeProcessor(Processor):
         self.processors = processors
 
     def _process(self) -> np.ndarray:
-        cur_loader = self.loader()
+        cur_loader = self.loader
         for processor in self.processors:
             processor.loader = cur_loader
             cur_loader = Loader(img=processor._process())
