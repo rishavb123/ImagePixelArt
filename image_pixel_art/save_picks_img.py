@@ -3,7 +3,7 @@ import cv2
 
 from constants import *
 
-picks_dir = "picks"
+picks_dir = "random_picks"
 
 alpha = 0.5
 beta = 0.5
